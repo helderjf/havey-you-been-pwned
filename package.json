@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/helderjf/safe-have-you-been-pwned/issues"
   },
-  "homepage": "https://github.com/helderjf/safe-have-you-been-pwned#readme"
+  "homepage": "https://github.com/helderjf/safe-have-you-been-pwned#readme",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  }
 }
