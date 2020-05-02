@@ -1,5 +1,6 @@
 const crypto = require('crypto')
 const http = require('http2')
+const axios = require('axios')
 
 
 //get password from the command line
@@ -14,6 +15,14 @@ console.log('hashed password = ' + hashedPassword)
 const splitedHash = splitHash(hashedPassword)
 console.log('hash head: '+ splitedHash.head)
 console.log('hash tail: '+ splitedHash.tail)
+
+const url = 'https://api.pwnedpasswords.com/range/'
+
+axios.default.get(url + splitedHash.head)
+	.then(response => console.log(response.data))
+	.catch(error => console.log(error))
+
+
 
 
 
