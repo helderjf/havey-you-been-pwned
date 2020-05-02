@@ -1,6 +1,15 @@
 const crypto = require('crypto')
 const axios = require('axios')
 const chalk = require('chalk')
+const yargs = require('yargs')
+
+//set up GUI
+yargs.version('1.0.0')
+yargs.help()
+yargs.parse()
+
+
+
 
 //get password from the command line
 const plainTextPassword = process.argv[2];
