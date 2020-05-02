@@ -1,0 +1,24 @@
+{
+  "name": "safe-have-you-been-pwned",
+  "version": "1.0.0",
+  "description": "A simple node.js command line util that lets you safely check if your passwords have bean pwned, without actually sending your passwords over the internet, but only a part of it's hash",
+  "main": "pwned.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helderjf/safe-have-you-been-pwned.git"
+  },
+  "keywords": [
+    "pwned",
+    "hash",
+    "safe"
+  ],
+  "author": "helderjf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helderjf/safe-have-you-been-pwned/issues"
+  },
+  "homepage": "https://github.com/helderjf/safe-have-you-been-pwned#readme"
+}
