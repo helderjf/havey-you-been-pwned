@@ -9,5 +9,7 @@ Then this app will locally search the list for the remaining 35 characters of yo
 
 ## Usage
 cd safe-have-you-been-pwned
+
 npm install
+
 node pwned 'your password between quotes'
