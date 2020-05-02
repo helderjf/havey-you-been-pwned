@@ -16,5 +16,5 @@ cd safe-have-you-been-pwned
 
 npm install
 
-node pwned 'your_password_between_quotes'
+node pwned check 'your_password_between_quotes'
 ```
