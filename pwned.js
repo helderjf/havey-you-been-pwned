@@ -8,7 +8,6 @@ yargs.version('1.0.0')
 yargs.help()
 yargs.parse()
 
-
 //get password from the command line
 const plainTextPassword = process.argv[2];
 
@@ -25,12 +24,13 @@ axios.default.get(url + splitedHash.head)
 
 //check if password has been pwned
 function checkPwned(data){
-	const filteredData = data.split('\r\n')
-	.filter(line =>  line.startsWith(splitedHash.tail))
+	const pwnedHash = 
+		data.split('\r\n')
+			.find(line =>  line.startsWith(splitedHash.tail))
 	
-	if(filteredData.length != 0){
-		const timesPwned = filteredData[0].split(':')[1]
-		console.log(chalk.white.bgRedBright('!!!Upss!!!!') 
+	if(pwnedHash){
+		const timesPwned = pwnedHash[0].split(':')[1]
+		console.log(chalk.white.bgRedBright('!!!Whoops!!!!') 
 			+ '     ' 
 			+ chalk.redBright('Your password has been pwned ' + timesPwned + ' times!'))
 		console.log(chalk.redBright('You should change it ASAP.'))
