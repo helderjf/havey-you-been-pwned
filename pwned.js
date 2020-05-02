@@ -58,7 +58,7 @@ function handle(plainTextPassword){
 
 	//get pwned hashes from API
 	const url = 'https://api.pwnedpasswords.com/range/'
-	axios.default.get(url + splitedHash.head)
+	axios.default.get(url + encodeURIComponent(splitedHash.head))
 		.then(response => checkPwned(splitedHash, response.data))
 		.catch(error => console.log(error))
 }
