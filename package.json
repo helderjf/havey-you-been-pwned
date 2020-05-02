@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/helderjf/safe-have-you-been-pwned#readme",
   "dependencies": {
-    "chalk": "^4.0.0"
+    "chalk": "^4.0.0",
+    "yargs": "^15.3.1"
   }
 }
