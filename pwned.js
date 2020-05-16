@@ -50,7 +50,7 @@ function showVersion () {
  * Main program
  * @param {string} plainTextPassword 
  */
-function handle(plainTextPassword){
+async function handle(plainTextPassword){
 	//hash password using SHA1 algorithm
 	const hashedPassword = hashUtils.hashPassword(plainTextPassword)
 	//split hashed password
@@ -58,9 +58,12 @@ function handle(plainTextPassword){
 
 	//get pwned hashes from API
 	const url = 'https://api.pwnedpasswords.com/range/'
-	axios.default.get(url + encodeURIComponent(splitedHash.head))
-		.then(response => checkPwned(splitedHash, response.data))
-		.catch(error => console.log(error))
+	try {
+		const response = await axios.default.get(url + encodeURIComponent(splitedHash.head))
+		checkIfWasPwned(splitedHash, response.data)
+	} catch (error) {
+		return console.log(error)
+	}
 }
 
 /**
@@ -68,7 +71,7 @@ function handle(plainTextPassword){
  * @param {Object} splitedHash object containing the password's SHA1 hash, splited by head(5 first characters) and tail
  * @param {String} data multiline string containing the API response body
  */
-function checkPwned(splitedHash, data){
+function checkIfWasPwned(splitedHash, data){
 	const pwnedHash = 
 		data.split('\r\n')
 			.find(line =>  line.startsWith(splitedHash.tail))
