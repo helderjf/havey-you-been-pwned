@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/helderjf/safe-have-you-been-pwned#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chalk": "^4.0.0"
   }
 }
